@@ -16,7 +16,7 @@ public class HelloRestController {
     @GetMapping("/hello")
     public String helloRest() {
 
-        logger.info("UC6: /api/hello endpoint called");
+        logger.info("/api/hello endpoint called");
 
         return "Hello from BridgeLabz";
     }
