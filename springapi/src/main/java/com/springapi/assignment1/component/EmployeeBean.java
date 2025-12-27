@@ -1,4 +1,4 @@
-package com.springapi.component;
+package com.springapi.assignment1.component;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

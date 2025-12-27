@@ -5,9 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 // UC5: Spring Core - Application startup and component scanning
 
-import com.springapi.component.EmployeeBean;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.springapi.assignment1.component.EmployeeBean;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
