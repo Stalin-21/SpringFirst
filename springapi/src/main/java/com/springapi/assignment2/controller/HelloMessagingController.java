@@ -1,13 +1,7 @@
 package com.springapi.assignment2.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 import com.springapi.assignment2.model.User;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/hello-rest")
@@ -36,6 +30,15 @@ public class HelloMessagingController {
     public String helloPost(@RequestBody User user) {
         return "Hello " + user.getFirstName() + " "
                 + user.getLastName() + " from BridgeLabz";
+    }
+
+    // UC5: PUT with Path Variable + Query Parameter
+    @PutMapping("/put/{firstName}")
+    public String helloPut(
+            @PathVariable String firstName,
+            @RequestParam String lastName) {
+
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
     }
 
 }
