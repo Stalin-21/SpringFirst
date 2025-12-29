@@ -11,7 +11,7 @@ public class GreetingService {
     @Autowired
     private GreetingRepository greetingRepository;
 
-    public Greeting createGreeting(String message) {
+    public Greeting saveGreeting(String message) {
         return greetingRepository.save(new Greeting(message));
     }
 }

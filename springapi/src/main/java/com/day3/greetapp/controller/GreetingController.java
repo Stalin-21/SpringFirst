@@ -4,9 +4,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import com.day3.greetapp.dto.GreetingRequest;
+import com.day3.greetapp.model.Greeting;
+import com.day3.greetapp.service.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 public class GreetingController {
+
+    @Autowired
+    private GreetingService greetingService;
 
     // UC1
     @GetMapping("/greeting")
@@ -35,4 +43,11 @@ public class GreetingController {
     public String greetingPath(@PathVariable String name) {
         return "Hello " + name;
     }
+
+    // UC4: Save Greeting to DB
+    @PostMapping("/greeting")
+    public Greeting saveGreeting(@RequestBody GreetingRequest request) {
+        return greetingService.saveGreeting(request.getMessage());
+    }
+
 }
