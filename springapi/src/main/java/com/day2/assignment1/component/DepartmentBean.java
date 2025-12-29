@@ -1,4 +1,4 @@
-package com.springapi.assignment1.component;
+package com.day2.assignment1.component;
 
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.springapi.assignment1.controller;
+package com.day2.assignment1.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

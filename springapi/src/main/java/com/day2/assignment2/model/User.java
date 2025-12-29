@@ -1,4 +1,4 @@
-package com.springapi.assignment2.model;
+package com.day2.assignment2.model;
 
 public class User {
 

@@ -1,7 +1,7 @@
-package com.springapi.assignment2.controller;
+package com.day2.assignment2.controller;
 
 import org.springframework.web.bind.annotation.*;
-import com.springapi.assignment2.model.User;
+import com.day2.assignment2.model.User;
 
 @RestController
 @RequestMapping("/hello-rest")
