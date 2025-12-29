@@ -22,8 +22,16 @@ public class GreetingService {
                 .orElseThrow(() -> new RuntimeException("Greeting not found with id: " + id));
     }
 
-    // UC-6
     public List<Greeting> getAllGreetings() {
         return greetingRepository.findAll();
     }
+
+    public Greeting updateGreeting(Long id, String message) {
+        Greeting greeting = greetingRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Greeting not found with id: " + id));
+
+        greeting.setMessage(message);
+        return greetingRepository.save(greeting);
+    }
+
 }

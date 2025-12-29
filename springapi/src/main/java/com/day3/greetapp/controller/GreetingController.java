@@ -1,15 +1,10 @@
 package com.day3.greetapp.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import com.day3.greetapp.dto.GreetingRequest;
 import com.day3.greetapp.model.Greeting;
 import com.day3.greetapp.service.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -63,6 +58,15 @@ public class GreetingController {
     @GetMapping("/greetings")
     public List<Greeting> getAllGreetings() {
         return greetingService.getAllGreetings();
+    }
+
+    // UC7: Update Greeting by ID
+    @PutMapping("/greeting/{id}")
+    public Greeting updateGreeting(
+            @PathVariable Long id,
+            @RequestBody GreetingRequest request) {
+
+        return greetingService.updateGreeting(id, request.getMessage());
     }
 
 }
