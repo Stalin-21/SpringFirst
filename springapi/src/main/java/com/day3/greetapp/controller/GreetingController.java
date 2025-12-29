@@ -39,7 +39,7 @@ public class GreetingController {
     }
 
     // UC2-B: Path Variable
-    @GetMapping("/greeting/{name}")
+    @GetMapping("/greeting/name/{name}")
     public String greetingPath(@PathVariable String name) {
         return "Hello " + name;
     }
@@ -48,6 +48,12 @@ public class GreetingController {
     @PostMapping("/greeting")
     public Greeting saveGreeting(@RequestBody GreetingRequest request) {
         return greetingService.saveGreeting(request.getMessage());
+    }
+
+    // UC5: Get Greeting by ID
+    @GetMapping("/greeting/{id}")
+    public Greeting getGreetingById(@PathVariable Long id) {
+        return greetingService.getGreetingById(id);
     }
 
 }
